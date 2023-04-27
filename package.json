@@ -32,5 +32,8 @@
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.20",
     "tailwindcss": "^3.2.4"
+  },
+  {
+    "homepage": "https://cdialpha.github.io/african_women_dmv"
   }
 }
