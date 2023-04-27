@@ -1,0 +1,110 @@
+quick launch EC2 instance - t2 micro 
+created key pair - RSA, .pem file, save to .ssh folder on desktop 
+chmod 400 filename.pem --> just makes it so you can't write to it.  
+created security group, ssh from my ip only 
+instance created i-0e0bdc35aded80ff2
+
+ ssh -i "futech-site-key-pair.pem" ec2-user@ec2-100-25-36-160.compute-1.amazonaws.com
+
+ sudo amazon-linux-extras list | grep nginx
+ sudo amazon-linux-extras enable nginx1
+ sudo yum clean metadata
+ sudo yum -y install nginx
+
+which nginx -> get the path to binary
+/usr/sbin/nginx
+
+sudo systemctl start nginx.service
+sudo systemctl status nginx
+curl localhost 
+sudo yum install git
+sudo git clone https://github.com/cdialpha/futech_consult.git
+
+From August 13, 2021, GitHub is no longer accepting account passwords when
+authenticating Git operations. You need to add a PAT (Personal Access Token)
+instead, and you can follow the below method to add a PAT on your system.
+  
+Create Personal Access Token on GitHub
+From your GitHub account, go to Settings => Developer Settings => Personal Access 
+Token => Generate New Token (Give your password) => Fillup the form => click Generate
+token => Copy the generated Token, it will be something like 
+ghp_sFhFsSHhTzMDreGRLjmks4Tzuzgthdvfsrta
+
+need to create a PAT and give permissions. 
+wasn't sure which permissions were for cloning, wasn't working initially,
+change permissions and it worked.
+
+
+Scratch Manual Deployment... need to do via Docker.
+https://medium.com/appgambit/part-1-running-docker-on-aws-ec2-cbcf0ec7c3f8 
+
+sudo service docker start
+sudo yum install -y docker
+or 
+sudo amazon-linux-extras install docker
+
+need to include ec2-user with permissions to use docker (so don't have to keep using sudo)
+$ sudo usermod -a -G docker ec2-user 
+# need to log out
+$ exit
+$ ssh back into EC2 instance 
+
+# everytime you ssh into need to redo nvm command? 
+$ nvm use v17.0.0
+# node18 isn't supported and node16 doesn't support Next13. So use 17. 
+
+$ docker info (just to see if docker is installed properly)
+
+# Need to create a Dockerfile. 
+# Should really learn multistage -- see excerpt below
+    # Rebuild the source code only when needed 
+    # FROM node:16-alpine AS builder 
+    # WORKDIR /app 
+    # COPY –from=deps /app/node_modules ./node_modules 
+    # FROM node:16-alpine AS runner 
+
+# then pull repo from github or CodeCommit 
+# build the image in EC2 isnstance using the Dockerfile from your repo  
+# don't need to do this for now, but 
+# to run the image --> "docker run -dp 5000:5000 my-image"
+
+
+# Create an IAM role for the EC2 instance so that we can create ECR from the EC2 instance 
+$ aws ecr create-repository --repository-name futech-app --region us-east-1
+# returns something like 
+{
+    "repository": {
+        "repositoryUri": "387770768015.dkr.ecr.us-east-1.amazonaws.com/futech-app", 
+        "imageScanningConfiguration": {
+            "scanOnPush": false
+        }, 
+        "encryptionConfiguration": {
+            "encryptionType": "AES256"
+        }, 
+        "registryId": "387770768015", 
+        "imageTagMutability": "MUTABLE", 
+        "repositoryArn": "arn:aws:ecr:us-east-1:387770768015:repository/futech-app", 
+        "repositoryName": "futech-app", 
+        "createdAt": 1673627050.0
+    }
+}
+
+
+# Need to follow CodeCommit setup 
+https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-ssh-unixes.html
+Gen RSA key, add to  IAM user with SSH security credentials. 
+Create config file in .ssh on local machine 
+A few other steps and then should be able to push code from VSCode to Codecommit.
+git push ssh://git-codecommit.us-east-1.amazonaws.com/v1/repos/futech 
+
+Created a build project using CodeBuild 
+Created a buildspec.yaml that pushes Built Docker Image to ECR 
+
+Login to ECR from EC2 instance 
+$> $(aws ecr get-login --no-include-email --region us-east-2)
+
+
+
+
+
+
