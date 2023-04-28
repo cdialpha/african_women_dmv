@@ -5,6 +5,7 @@ const nextConfig = {
     appDir: true,
   },
   output: "export",
+  basePath: "https://cdialpha.github.io/african_women_dmv/",
 };
 
 module.exports = nextConfig;
