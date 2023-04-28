@@ -49,10 +49,10 @@ const page = () => {
             On January 6th, 2018, a selected group of 14 women, with good
             standing in the society, came together to form an association that
             will foster the spirit of oneness, and solidarity, work relentlessly
-            for the common good of the association, and meet the association's
-            agenda, that of bringing resources to the disadvantaged with a
-            unified force, and make the world a better place by empowering women
-            and children.
+            for the common good of the association, and meet the
+            association&apos;s agenda, that of bringing resources to the
+            disadvantaged with a unified force, and make the world a better
+            place by empowering women and children.
           </h2>
           <div className="mt-5">
             We have grown over the years to 20+ members and
@@ -157,6 +157,7 @@ const page = () => {
                 height={500}
                 width={700}
                 className="h-60"
+                alt={`flag of ${flag.country}`}
               ></Image>
             </div>
           ))}

@@ -65,9 +65,8 @@ const Navbar = () => {
             </div>
 
             {navItems.map((navItem, index) => (
-              <div className="flex mr-5">
+              <div key={index} className="flex mr-5">
                 <div
-                  key={index}
                   className={`${
                     pathname == navItem ? "border-coral" : "border-slate-200"
                   } border-b-4 ml-2 mr-2`}

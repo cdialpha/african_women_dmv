@@ -81,6 +81,7 @@ const page = () => {
                 height={1000}
                 width={1000}
                 className=""
+                alt={photo.desc}
               ></Image>
             </div>
           ))}

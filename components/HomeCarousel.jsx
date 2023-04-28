@@ -15,11 +15,11 @@ const AboutCarousel = () => {
   return (
     <div className="h-[1000px] flex">
       <Carousel className="flex">
-        <Image src={mall}></Image>
-        <Image src={partybus}></Image>
-        <Image src={sisters}></Image>
-        <Image src={casino}></Image>
-        <Image src={wedding}></Image>
+        <Image src={mall} alt="image 1"></Image>
+        <Image src={partybus} alt="image 1"></Image>
+        <Image src={sisters} alt="image 1"></Image>
+        <Image src={casino} alt="image 1"></Image>
+        <Image src={wedding} alt="image 1"></Image>
       </Carousel>
     </div>
   );
