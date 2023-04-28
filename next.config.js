@@ -1,12 +1,17 @@
 /** @type {import('next').NextConfig} */
+
+const repo = "african_women_dmv";
+const assetPrefix = `/${repo}/`;
+const basePath = `/${repo}`;
+
 const nextConfig = {
   reactStrictMode: true,
   experimental: {
     appDir: true,
   },
   output: "export",
-  basePath: "https://cdialpha.github.io/african_women_dmv/",
-  trailingSlash: true,
+  basePath: basepath,
+  assetPrefix: assetPrefix,
 };
 
 module.exports = nextConfig;
