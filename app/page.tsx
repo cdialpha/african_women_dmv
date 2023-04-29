@@ -36,9 +36,9 @@ const Home = () => {
         <h1
           className={`${CedarvilleCursiveClass} text-4xl pl-5 pr-5 mt-auto mb-auto`}
         >
-          "When I dare to be powerful, to use my strength in the service of my
-          vision, then it becomes less and less important whether I am afraid."
-          -Audre Lorde
+          &ldquo;When I dare to be powerful, to use my strength in the service
+          of my vision, then it becomes less and less important whether I am
+          afraid.&rdquo; -Audre Lorde
         </h1>
         <HomeCarousel />
       </div>
