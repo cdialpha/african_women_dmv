@@ -1,5 +1,6 @@
 import React from "react";
 import kitchen from "../public/kitchen_dark.jpg";
+import award from "../public/award_3_dark.jpg";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -8,7 +9,7 @@ const Hero = () => {
     <div className="flex flex-col">
       <div className="flex flex-col relative">
         <Image
-          src={kitchen}
+          src={award}
           alt="architectural background for hero image"
           width={2000}
           height={2000}

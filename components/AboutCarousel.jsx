@@ -14,7 +14,7 @@ import Image from "next/image";
 const AboutCarousel = () => {
   return (
     <div className="">
-      <Carousel>
+      <Carousel autoPlay={true} showThumbs={false}>
         <Image src={mall} alt="image 1"></Image>
         <Image src={partybus} alt="image 1"></Image>
         <Image src={sisters} alt="image 1"></Image>

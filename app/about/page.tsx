@@ -2,14 +2,15 @@ import React from "react";
 import dc from "../../public/dc_dark.jpg";
 import Image from "next/image";
 import Link from "next/link";
-import cameroon from "../../public/cameroon.jpg";
-import gabon from "../../public/gabon.jpg";
+import cameroon from "../../public/cameroon.png";
+import gabon from "../../public/gabon.png";
 import togo from "../../public/togo.jpg";
 import sa from "../../public/sa.jpg";
 import tanz from "../../public/tanzania.jpg";
 import liberia from "../../public/liberia.jpg";
 import AboutCarousel from "../../components/AboutCarousel";
-import stairs from "../../public/stairs.png";
+import africa from "../../public/pagne.jpg";
+import MonthlyMeeting from "../../components/MonthlyMeeting";
 
 const page = () => {
   const flags = [
@@ -22,7 +23,7 @@ const page = () => {
   ];
 
   return (
-    <div className="max-w-[1500px] ml-auto mr-auto text-4xl">
+    <div className="max-w-[1500px] ml-auto mr-auto text-2xl">
       <div className="flex flex-col relative">
         <Image
           src={dc}
@@ -40,12 +41,12 @@ const page = () => {
           </h1>
         </div>
       </div>
-      <div className="pt-10 pb-10 text-4xl text-black">
+      <div className="pt-10 pb-10 text-2xl text-black">
         <div className="flex flex-col w-11/12 max-w-screen-2xl ml-5 mr-5 md:ml-auto md:mr-auto rounded-2xl mt-10">
-          <h1 className="font-black text-6xl mb-5 mt-10 ">
+          <h1 className="font-black text-4xl mb-5 mt-10 ">
             How We came To be{" "}
           </h1>
-          <h2 className="text-4xl">
+          <h2 className="text-2xl">
             On January 6th, 2018, a selected group of 14 women, with good
             standing in the society, came together to form an association that
             will foster the spirit of oneness, and solidarity, work relentlessly
@@ -55,90 +56,30 @@ const page = () => {
             place by empowering women and children.
           </h2>
           <div className="mt-5">
-            We have grown over the years to 20+ members and
+            We have grown over the years to 20+ members and our momentum is
+            strong.
           </div>
         </div>
       </div>
       <div className="flex justify-around mt-10 bg-coral">
         <div className="flex flex-col text-black mt-auto mb-auto ml-20">
-          <h1 className="text-6xl font-black mr-10"> We believe in: </h1>
-          <div className="text-4xl mr-10">
+          <h1 className="text-4xl font-black mr-10"> We believe in: </h1>
+          <div className="mr-10 text-4xl">
             <ul className="list-disc list-inside mt-5 ml-10">
-              <li>sisterhood</li>
-              <li>charity</li>
-              <li>personal growth</li>
-              <li>community building</li>
-              <li>black excellence</li>
+              <li>Sisterhood</li>
+              <li>Charity</li>
+              <li>Personal growth</li>
+              <li>Community building</li>
+              <li>Black excellence</li>
               <li>Supporting families </li>
             </ul>
           </div>
         </div>
         <div className="h-1/3 w-1/3 mt-10 mb-0 mr-20">
-          <AboutCarousel showThumbs={true} />
+          <AboutCarousel />
         </div>
       </div>
-      <div className="ml-10 mr-10 mt-10 text-4xl">
-        <div className="flex">
-          <div className=" h-full mt-auto mb-auto pl-5 pr-5">
-            <h1 className="font-black text-black pt-5 pb-5 text-6xl">
-              Monthly Meeting
-            </h1>
-            <h2 className="">
-              We currently meet every first Saturday of the month. Contact us
-              for more information.
-            </h2>
-            <div className="">
-              <h2 className="mt-5">Our monthly meeting entails:</h2>
-              <ul className="list-disc list-outside w-3/4 ml-10">
-                <li>
-                  Discussing ideas that promotes the vision of our organization.
-                </li>
-                <li>
-                  Uplifting and empowering our members by celebrating monthly
-                  birthdays.
-                </li>
-                <li>
-                  We empathize and sympathize with our members during tragic
-                  circumstances such as the lost of a love one.
-                </li>
-                <li>
-                  Celebrating milestones events such as the birth of a new baby
-                  and academic accomplishment
-                </li>
-              </ul>
-            </div>
-            <div className="flex justify-center">
-              <Link href="/join">
-                <div className="border-4 border-coral text-4xl text-black w-40 rounded-2xl mr-5 mt-5 text-center hover:text-white hover:bg-coral">
-                  Join
-                </div>
-              </Link>
-              <Link href="/contact">
-                <div className="border-4 border-coral text-4xl text-black w-60 rounded-2xl ml-auto mr-auto mt-5 text-center hover:text-white hover:bg-coral">
-                  Contact Us
-                </div>
-              </Link>
-            </div>
-            <h2 className="mt-5">
-              Beyond our monthly meeting, we host additional events for
-              birthdays, weddings, and other celebrations. See our full list of
-              upcoming events.
-            </h2>
-            <Link href="/events">
-              <div className="border-4 border-coral text-4xl text-black w-80 rounded-2xl pl-2 pr-2 ml-auto mr-auto mt-5 text-center hover:text-white hover:bg-coral">
-                Upcoming Events
-              </div>
-            </Link>
-          </div>
-          <Image
-            src={stairs}
-            height={2000}
-            width={2000}
-            alt="stairs"
-            className="mt-auto mb-auto"
-          ></Image>
-        </div>
-      </div>
+      <MonthlyMeeting />
       <div className="ml-10 mr-10 mt-20">
         <h1 className="font-black text-black pt-5 pb-5 text-6xl">Our Roots</h1>
         <h2 className="">
@@ -163,6 +104,13 @@ const page = () => {
           ))}
         </div>
       </div>
+      <Image
+        src={africa}
+        height={1000}
+        width={1000}
+        alt="africa in pagne"
+        className="ml-auto mr-auto"
+      />
     </div>
   );
 };

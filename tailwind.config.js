@@ -10,6 +10,7 @@ module.exports = {
       colors: {
         white: "#ffffff",
         coral: "#da664f",
+        cherry: "#ebd5ee",
       },
       fontFamily: {
         prosto: ['"Prosto One"'],

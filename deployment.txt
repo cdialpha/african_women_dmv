@@ -1,0 +1,6 @@
+https://www.youtube.com/watch?v=zmvlWMx3ZTs
+https://github.com/actions/deploy-pages
+
+To do List: 
+    - Clean up unused images 
+    - Make mobile responsive 

@@ -6,7 +6,7 @@ const IntroMission = () => {
     <div className="pt-5 pb-5 flex flex-col ml-10 mt-10">
       <div>
         <h1 className="font-black text-4xl ">Our Objectives</h1>
-        <ul class="list-disc list-inside mt-5 text-2xl">
+        <ul class="list-disc list-inside mt-5 mb-10 text-2xl">
           <li>
             To generate funds and apply them toward the official business of the
             organization
